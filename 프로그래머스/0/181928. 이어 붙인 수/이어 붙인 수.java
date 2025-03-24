@@ -1,15 +1,10 @@
 class Solution {
     public int solution(int[] num_list) {
-        String odd="";
-        String even="";
-        for(int i=0; i<num_list.length; i++){
-            if(num_list[i]%2==1){
-                odd+=num_list[i];
-            }
-            else{
-                even+=num_list[i];
-            }
+        StringBuilder odd=new StringBuilder();
+        StringBuilder even=new StringBuilder();
+        for(int num:num_list){
+            (num%2==1?odd:even).append(num);
         }
-        return Integer.parseInt(odd)+Integer.parseInt(even);
+        return Integer.parseInt(odd.toString())+Integer.parseInt(even.toString());
     }
 }
